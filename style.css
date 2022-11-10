@@ -33,25 +33,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 .container{
     max-width: 700px;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--white);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
 }
 
-.container header{
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
 }
 
-header .heading{
+.heading{
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -59,33 +60,106 @@ header .heading{
 
 .heading h1{
     color: var(--very-dark-blue);
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 5vw, 1.3rem);
 }
 
-.heading .number{
+.heading .notif-number{
     width: 30px;
     height: 25px;
     display: flex;
-    color: #fff;
+    color: var(--white);
     background-color: var(--blue);
     border-radius: 5px;
     justify-content: center;
     align-items: center;
 }
 
-header .mark{
+header .mark a{
     color: var(--dark-grayish-blue);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
-.notification{
+header .mark a:hover,
+header .mark a:active{
+    color: var(--blue);
+}
+
+.notif-message{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
+    margin-bottom: 0.8rem;
     padding: 1rem;
-    background-color: var(--grayish-blue);
 }
 
-.avatar img{
+.unread{
+    background-color: var(--very-light-grayish-blue);
+    border-radius: 10px;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.unread p:first-of-type::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--red);
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+img{
     width: 50px;
+}
+
+.notif-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--dark-grayish-blue);
+}
+
+.notif-text a{
+    font-weight: 800;
+}
+
+.avatar-name{
+    color: var(--very-dark-blue);
+    margin-right: 0.2rem;
+}
+
+.notif-about{
+    color: var(--dark-grayish-blue);
+    margin-left: 0.2rem;
+}
+
+.avatar-name:hover,
+.avatar-name:active,
+.notif-about:hover,
+.notif-about:active{
+    color: var(--blue);
+}
+
+.time{
+    color: var(--grayish-blue);
+}
+
+.private-message{
+    font-weight: 500;
+    padding: 1rem;
+    border: 1px solid var(--light-grayish-blue-2);
+    border-radius: 5px;
+    margin-top: 0.6rem;
+}
+
+.friend-message{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.kimberly-smith{
+    display: flex;
+    justify-content: space-between;
 }
